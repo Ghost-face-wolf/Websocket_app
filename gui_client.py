@@ -61,9 +61,10 @@ class ChatGUI:
                     self.root.after(0, self._append_raw, f"{message}\n")
 
         except Exception as e:
-            self.root.after(0, self._set_status, "Disconnected", "red")
             self.root.after(0, self._append_raw, f"[System Error]: {e}\n")
-
+        finally:
+            self.ws = None
+            self.root.after(0,self._set_status,"Disconnected","red")
     def _set_status(self, text, color):
         self.status_label.config(text=text, foreground=color)
 
