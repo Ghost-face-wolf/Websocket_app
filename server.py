@@ -15,6 +15,10 @@ async def handler(websocket, *args):
     try:
         await websocket.send("System: Connected to WebSocket Server!")
         async for message in websocket:
+            if not isinstance(message,str) or not message.strip():
+                continue
+            if len(message)>500:
+                continue
             print(f"Relaying: {message}")
             await broadcast(message)
     except websockets.exceptions.ConnectionClosed:
