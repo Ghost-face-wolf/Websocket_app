@@ -13,6 +13,13 @@ A lightweight, full-duplex real-time chat application built in Python using WebS
 - **Zero Heavy Dependencies:** Built on Python's standard libraries (`asyncio`, `tkinter`, `threading`) and requires only the core `websockets` package.
 
 ---
+   ## Setup
+   pip install -r requirements.txt
+
+   ## Run
+   1. python server.py
+   2. python client.py        (terminal client)
+   3. python gui_client.py    (GUI client)
 
 ## 📁 Project Structure
 
